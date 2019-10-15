@@ -1,0 +1,8 @@
+baseURL = "https://kaiseiyokoyama.github.io/blog/"
+author = "Kaisei Yokoyama"
+title = "モダンな言語をたのむ"
+canonifyurls = true
+theme = "hugo_theme_pickles"
+publishDir = "docs"
+hasCJKLanguage = true
+languageCode = "ja-jp"
