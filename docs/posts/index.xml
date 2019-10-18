@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Rustacean</title>
+      <title>60秒でわかるF#の文法</title>
       <link>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</link>
       <pubDate>Tue, 15 Oct 2019 19:47:25 +0900</pubDate>
       
       <guid>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</guid>
-      <description>aaaaa</description>
+      <description>まず始めに, タイトル詐欺であることをここにお断りしておく. この記事はおそらく60秒では読めないだろう. 元ネタのF# syntax in 60 secondsに倣っ</description>
     </item>
     
   </channel>

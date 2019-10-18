@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>モダンな言語をたのむ</title>
-    <link>https://kaiseiyokoyama.github.io/blog/</link>
-    <description>Recent content on モダンな言語をたのむ</description>
+    <title>f_sharp on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/f_sharp/</link>
+    <description>Recent content in f_sharp on モダンな言語をたのむ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 15 Oct 2019 19:47:25 +0900</lastBuildDate>
     
-	<atom:link href="https://kaiseiyokoyama.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/f_sharp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

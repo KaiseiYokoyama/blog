@@ -6,9 +6,28 @@
     <description>Recent content in Tags on モダンな言語をたのむ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
+    <lastBuildDate>Tue, 15 Oct 2019 19:47:25 +0900</lastBuildDate>
     
 	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://kaiseiyokoyama.github.io/blog/tags/dotnet/</link>
+      <pubDate>Tue, 15 Oct 2019 19:47:25 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>f_sharp</title>
+      <link>https://kaiseiyokoyama.github.io/blog/tags/f_sharp/</link>
+      <pubDate>Tue, 15 Oct 2019 19:47:25 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/tags/f_sharp/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
