@@ -15,8 +15,8 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: master
-        FOLDER: docs
+        BRANCH: gh-pages
+        FOLDER: public
         HUGO_VERSION: 0.57.2
         BUILD_SCRIPT: |
           wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
