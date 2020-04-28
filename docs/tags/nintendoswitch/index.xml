@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NintendoSwitch on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/nintendoswitch/</link>
+    <description>Recent content in NintendoSwitch on モダンな言語をたのむ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; Kaisei Yokoyama</copyright>
+    <lastBuildDate>Tue, 28 Apr 2020 15:08:10 +0900</lastBuildDate>
+    
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/nintendoswitch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Joycon-rs の使い方 - 側面LED, HOMEボタンのライト制御</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/002/</link>
+      <pubDate>Tue, 28 Apr 2020 15:08:10 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/002/</guid>
+      <description>（本記事はv0.3.1時点でのものである） TL;DR examples/player_lights.rs Joycon-rsを使ってJoy-Con側面のLEDを制御する Joycon-rsを用いれば, J</description>
+    </item>
+    
+    <item>
+      <title>Joycon-rs の使い方 - Joy-Conの検出</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/001/</link>
+      <pubDate>Tue, 28 Apr 2020 14:59:22 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/001/</guid>
+      <description>（本記事はv0.3.1時点でのものである） TL;DR examples/scan_for_joycons.rs Joycon-rsを使ってJoycon-rsを検出する Joycon-rsの機能を用いて, 現在パ</description>
+    </item>
+    
+    <item>
+      <title>Joycon-rs の使い方 - 事前準備</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/000/</link>
+      <pubDate>Tue, 28 Apr 2020 14:16:25 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/000/</guid>
+      <description>Joycon-rs ちょっとした興味もあって, dekuNukem氏らのレポートを参考にRust言語からNintendo Switchのコントローラー Joy-Con を操作する</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -19,6 +19,9 @@
   <meta name="twitter:card" content="summary" />
 
   
+  <meta name="twitter:site" content="@KaiseiYokoyama" />
+  <meta name="twitter:creator" content="@KaiseiYokoyama" />
+  
 
   
   <meta property="og:type" content="article" />
@@ -71,49 +74,43 @@
     
 
 <p>題名をだいぶ省略しました。</p>
-
-<pre><code class="language-swift">struct HogeView: View {
-  var body: some View {
-    // ここ
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">HogeView</span>: View {
+  <span style="color:#66d9ef">var</span> body: some View {
+    <span style="color:#75715e">// ここ</span>
   }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>上記のコードのコメントの位置でFor文じみた文法を使用する方法です。</p>
 
 <h2 id="tl-dr">TL;DR</h2>
 
 <p>SwiftUIの<a href="https://developer.apple.com/documentation/swiftui/foreach"><strong>ForEach</strong></a>を使います。</p>
-
-<pre><code class="language-swift">/// Int型の値を格納できるサンプル用の型
-struct Value: Identifiable {
-  var id = UUID()
-  var value: Int
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">/// Int型の値を格納できるサンプル用の型</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Value</span>: Identifiable {
+  <span style="color:#66d9ef">var</span> id = UUID()
+  <span style="color:#66d9ef">var</span> value: Int
 }
 
-/// 子ビュー
-struct FugaView: View {
-  var body: some View {
-    // 省略
+<span style="color:#75715e">/// 子ビュー</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">FugaView</span>: View {
+  <span style="color:#66d9ef">var</span> body: some View {
+    <span style="color:#75715e">// 省略</span>
   }
 
-  init(_ value: Value) {
-    // 省略
+  <span style="color:#66d9ef">init</span>(<span style="color:#66d9ef">_</span> value: Value) {
+    <span style="color:#75715e">// 省略</span>
   }
 }
 
-/// 親ビュー
-struct HogeView: View {
-  var values = [Value(value: 0),Value(value: 1),Value(value: 2)]
-  var body: some View {
-    ForEach(values) { value in
-      // 例: FugaViewをvaluesごとに生成する
+<span style="color:#75715e">/// 親ビュー</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">HogeView</span>: View {
+  <span style="color:#66d9ef">var</span> values = [Value(value: <span style="color:#ae81ff">0</span>),Value(value: <span style="color:#ae81ff">1</span>),Value(value: <span style="color:#ae81ff">2</span>)]
+  <span style="color:#66d9ef">var</span> body: some View {
+    ForEach(values) { value <span style="color:#66d9ef">in</span>
+      <span style="color:#75715e">// 例: FugaViewをvaluesごとに生成する</span>
       FugaView(value)
     }
   }
-}
-</code></pre>
-
+}</code></pre></div>
 <h2 id="参考文献">参考文献</h2>
 
 <ul>
@@ -132,6 +129,7 @@ struct HogeView: View {
         </div>
         <div class="c-pagination__older">
           
+          <a href="https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/000/">Older</a>
           
         </div>
       </div>
@@ -145,13 +143,49 @@ struct HogeView: View {
 
   <footer class="l-footer">
     
+<ul class="c-links">
+  
+  <li class="c-links__item">
+    <a href="https://twitter.com/KaiseiYokoyama" target="_blank">
+      <svg viewBox="0 0 64 64" class="c-links__icon">
+        <title>twitter</title>
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  <li class="c-links__item">
+    <a href="https://github.com/KaiseiYokoyama" target="_blank">
+      <svg viewBox="0 0 64 64" class="c-links__icon">
+        <title>github</title>
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
 
 
     <p class="p-copyright">
       
 
       &nbsp;&bull;&nbsp;
-      2019
+      2020
 
       
         &nbsp;&bull;&nbsp;

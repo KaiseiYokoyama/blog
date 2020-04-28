@@ -6,3 +6,9 @@ publishDir = "docs"
 theme = "hugo_theme_pickles"
 hasCJKLanguage = true
 languageCode = "ja-jp"
+copyright = "&copy; Kaisei Yokoyama"
+pygmentsCodeFences = true
+
+[params]
+  twitter = "KaiseiYokoyama"
+  github = "KaiseiYokoyama"
