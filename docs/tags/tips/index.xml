@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>モダンな言語をたのむ</title>
-    <link>https://kaiseiyokoyama.github.io/blog/</link>
-    <description>Recent content on モダンな言語をたのむ</description>
+    <title>Tips on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/tips/</link>
+    <description>Recent content in Tips on モダンな言語をたのむ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 21 Oct 2019 12:07:02 +0900</lastBuildDate>
     
-	<atom:link href="https://kaiseiyokoyama.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://kaiseiyokoyama.github.io/blog/posts/swiftui/</guid>
       <description>題名をだいぶ省略しました。 struct HogeView: View { var body: some View { // ここ } } 上記のコードのコメントの位置でFor文じみた文法を使用する方法です。 TL;DR SwiftUIの</description>
-    </item>
-    
-    <item>
-      <title>60秒でわかるF#の文法</title>
-      <link>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</link>
-      <pubDate>Tue, 15 Oct 2019 19:47:25 +0900</pubDate>
-      
-      <guid>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</guid>
-      <description>まず始めに, タイトル詐欺であることをここにお断りしておく. この記事はおそらく60秒では読めないだろう. 元ネタのF# syntax in 60 secondsに倣っ</description>
     </item>
     
   </channel>

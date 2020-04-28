@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/ios/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/swift/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/swift5/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/swiftui/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/swiftui/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/tips/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
+    <lastmod>2019-10-21T12:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</loc>
     <lastmod>2019-10-15T19:47:25+09:00</lastmod>
   </url>
@@ -14,21 +59,6 @@
   
   <url>
     <loc>https://kaiseiyokoyama.github.io/blog/tags/f_sharp/</loc>
-    <lastmod>2019-10-15T19:47:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
-    <lastmod>2019-10-15T19:47:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
-    <lastmod>2019-10-15T19:47:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
     <lastmod>2019-10-15T19:47:25+09:00</lastmod>
   </url>
   
