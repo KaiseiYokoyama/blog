@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.58.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <meta name="generator" content="Hugo 0.72.0" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://kaiseiyokoyama.github.io/blog/css/style.css" />
   <script type="text/javascript" src="https://kaiseiyokoyama.github.io/blog/js/bundle.js"></script>
   
@@ -65,47 +65,30 @@
     </div>
   </header>
   <section id="js-article" class="p-article__body">
-    
-
-<p>まず始めに, タイトル詐欺であることをここにお断りしておく. この記事はおそらく60秒では読めないだろう. 元ネタの<a href="https://fsharpforfunandprofit.com/posts/fsharp-in-60-seconds/">F# syntax in 60 seconds</a>に倣ったまでである. 英語を臆せずに読めるのなら, あなたにとってこの記事の価値はほぼゼロに違いないということも付け足しておく. 元ネタの記事を読んでほしい.</p>
-
+    <p>まず始めに, タイトル詐欺であることをここにお断りしておく. この記事はおそらく60秒では読めないだろう. 元ネタの<a href="https://fsharpforfunandprofit.com/posts/fsharp-in-60-seconds/">F# syntax in 60 seconds</a>に倣ったまでである. 英語を臆せずに読めるのなら, あなたにとってこの記事の価値はほぼゼロに違いないということも付け足しておく. 元ネタの記事を読んでほしい.</p>
 <p>@wraiknyの誘いでF#言語に興味を持った。OCamlみたいな言語? らしい。関数型言語は一年前にちょっと授業で習ったのだが, 記憶力が悪いのでもう何も覚えていない。やばい。</p>
-
 <p>それにしても, F#に関する日本語のドキュメントはRust以上に(というかRustはまあまあ充実してきた)少ない。おそらくこれまで国内では、臆せず英語のドキュメントを読めるつよつよマンの独壇場だったのだろう。</p>
-
 <p>とはいえ日本語の文書も欲しいので、自分で少し書くことにする。<a href="https://fsharpforfunandprofit.com/posts/fsharp-in-60-seconds/">F# syntax in 60 seconds</a>の解釈をやっていこう。これまで手続き型言語ばかりを書いてきた同志のために, うろ覚えの知識も僅かながら添えておく。</p>
-
 <h1 id="f-syntax-in-60-seconds">F# syntax in 60 seconds</h1>
-
 <h2 id="変数">&ldquo;変数&rdquo;</h2>
-
 <pre><code>// ======== &quot;Variables&quot; (but not really) ==========
 // The &quot;let&quot; keyword defines an (immutable) value
 let myInt = 5
 let myFloat = 3.14
 let myString = &quot;hello&quot;	//note that no types needed
-</code></pre>
-
-<p>&ldquo;変数&rdquo;(語弊のある言い方らしい)は<code>let</code>キーワードで宣言する. デフォルトで非可変なのはRustと一緒. 型推論も効く.</p>
-
-<h2 id="リスト-https-docs-microsoft-com-ja-jp-dotnet-fsharp-language-reference-lists"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/lists">リスト</a></h2>
-
+</code></pre><p>&ldquo;変数&rdquo;(語弊のある言い方らしい)は<code>let</code>キーワードで宣言する. デフォルトで非可変なのはRustと一緒. 型推論も効く.</p>
+<h2 id="リストhttpsdocsmicrosoftcomja-jpdotnetfsharplanguage-referencelists"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/lists">リスト</a></h2>
 <pre><code>// ======== Lists ============
 let twoToFive = [2;3;4;5]        // Square brackets create a list with
                                  // semicolon delimiters.
 let oneToFive = 1 :: twoToFive   // :: creates list with new 1st element
 // The result is [1;2;3;4;5]
 let zeroToFive = [0;1] @ twoToFive   // @ concats two lists
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>F#リストは、シングルリンクリストとして実装されます。これは、リストの先頭にのみアクセスする操作が o (1) であり、要素アクセスが o (n) であることを意味します。</p>
 </blockquote>
-
 <p>先頭以外にも頻繁にアクセスする場合, <a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/arrays">配列</a>を使用するほうが良いらしい。</p>
-
 <h2 id="関数">関数</h2>
-
 <pre><code>// ======== Functions ========
 // The &quot;let&quot; keyword also defines a named function.
 let square x = x * x          // Note that no parens are used.
@@ -114,22 +97,12 @@ square 3                      // Now run the function. Again, no parens.
 let add x y = x + y           // don't use add (x,y)! It means something
                               // completely different.
 add 2 3                       // Now run the function.
-</code></pre>
-
-<p>関数の宣言キーワードも<code>let</code>を使用する。</p>
-
+</code></pre><p>関数の宣言キーワードも<code>let</code>を使用する。</p>
 <pre><code>let 関数名 引数... = 式
-</code></pre>
-
-<p>という形なのか?</p>
-
+</code></pre><p>という形なのか?</p>
 <p>関数を使用するときは</p>
-
 <pre><code>関数名 引数...
-</code></pre>
-
-<p>この書き方はOCamlでも見た気がする. 関数型の特徴かもしれない.</p>
-
+</code></pre><p>この書き方はOCamlでも見た気がする. 関数型の特徴かもしれない.</p>
 <pre><code>// to define a multiline function, just use indents. No semicolons needed.
 let evens list =
    let isEven x = x%2 = 0     // Define &quot;isEven&quot; as an inner (&quot;nested&quot;) function
@@ -138,51 +111,31 @@ let evens list =
                               // and a list to work on
 
 evens oneToFive               // Now run the function
-</code></pre>
-
-<p>複数行の関数はインデントを利用してまとめる. <code>List.filter</code>関数は名前からして<code>Tを取ってboolを返す関数 Tからなるリスト</code>の変数を取るっぽい.</p>
-
+</code></pre><p>複数行の関数はインデントを利用してまとめる. <code>List.filter</code>関数は名前からして<code>Tを取ってboolを返す関数 Tからなるリスト</code>の変数を取るっぽい.</p>
 <h2 id="による優先順位の指定">()による優先順位の指定</h2>
-
 <pre><code>// You can use parens to clarify precedence. In this example,
 // do &quot;map&quot; first, with two args, then do &quot;sum&quot; on the result.
 // Without the parens, &quot;List.map&quot; would be passed as an arg to List.sum
 let sumOfSquaresTo100 =
    List.sum ( List.map square [1..100] )
-</code></pre>
-
-<h2 id="パイプライン演算子">パイプライン演算子</h2>
-
+</code></pre><h2 id="パイプライン演算子">パイプライン演算子</h2>
 <pre><code>// You can pipe the output of one operation to the next using &quot;|&gt;&quot;
 // Here is the same sumOfSquares function written using pipes
 let sumOfSquaresTo100piped =
    [1..100] |&gt; List.map square |&gt; List.sum  // &quot;square&quot; was defined earlier
-</code></pre>
-
-<p><code>|&gt;</code>を使えば, 左の値を右の関数に代入することができるらしい.</p>
-
-<p><code>List.map square</code>という式の値は, リストを取って(おそらく)それぞれの要素を二乗したリストを返す<strong>関数</strong>である.<br />
+</code></pre><p><code>|&gt;</code>を使えば, 左の値を右の関数に代入することができるらしい.</p>
+<p><code>List.map square</code>という式の値は, リストを取って(おそらく)それぞれの要素を二乗したリストを返す<strong>関数</strong>である.<br>
 手続き型言語を常用してきた人には見慣れないものだが, 関数型言語にはカリー化という現象がある. 関数の仕様に際して変数を一部だけ指定しておいて, のこりの変数を取って結果を返す関数を生成する.</p>
-
-<h2 id="ラムダ関数-無名関数">ラムダ関数 / 無名関数</h2>
-
+<h2 id="ラムダ関数--無名関数">ラムダ関数 / 無名関数</h2>
 <pre><code>// you can define lambdas (anonymous functions) using the &quot;fun&quot; keyword
 let sumOfSquaresTo100withFun =
    [1..100] |&gt; List.map (fun x-&gt;x*x) |&gt; List.sum
-</code></pre>
-
-<p><code>fun</code>キーワードを用いて, 無名関数を宣言できる.</p>
-
+</code></pre><p><code>fun</code>キーワードを用いて, 無名関数を宣言できる.</p>
 <h2 id="関数の返り値">関数の返り値</h2>
-
 <pre><code>// In F# returns are implicit -- no &quot;return&quot; needed. A function always
 // returns the value of the last expression used.
-</code></pre>
-
-<p><code>return</code>キーワードはF#には必要ないとのこと. 関数は常に, 最後の式が返す値を返す.</p>
-
+</code></pre><p><code>return</code>キーワードはF#には必要ないとのこと. 関数は常に, 最後の式が返す値を返す.</p>
 <h2 id="パターンマッチング">パターンマッチング</h2>
-
 <pre><code>// ======== Pattern Matching ========
 // Match..with.. is a supercharged case/switch statement.
 let simplePatternMatch =
@@ -191,21 +144,13 @@ let simplePatternMatch =
     | &quot;a&quot; -&gt; printfn &quot;x is a&quot;
     | &quot;b&quot; -&gt; printfn &quot;x is b&quot;
     | _ -&gt; printfn &quot;x is something else&quot;   // underscore matches anything
-</code></pre>
-
-<p><code>switch</code>のやべーやつ, それが<code>match</code>である. F#の<code>match</code>はSwiftの<code>switch</code>に近く, 使用感はRustの<code>match</code>に似ているようだ.</p>
-
+</code></pre><p><code>switch</code>のやべーやつ, それが<code>match</code>である. F#の<code>match</code>はSwiftの<code>switch</code>に近く, 使用感はRustの<code>match</code>に似ているようだ.</p>
 <h2 id="option型">Option型</h2>
-
 <pre><code>// Some(..) and None are roughly analogous to Nullable wrappers
 let validValue = Some(99)
 let invalidValue = None
-</code></pre>
-
-<p>F#でNull安全を実現したいのなら, <code>Option</code>型を使う.</p>
-
+</code></pre><p>F#でNull安全を実現したいのなら, <code>Option</code>型を使う.</p>
 <h2 id="unpack">unpack</h2>
-
 <pre><code>// In this example, match..with matches the &quot;Some&quot; and the &quot;None&quot;,
 // and also unpacks the value in the &quot;Some&quot; at the same time.
 let optionPatternMatch input =
@@ -215,30 +160,18 @@ let optionPatternMatch input =
 
 optionPatternMatch validValue
 optionPatternMatch invalidValue
-</code></pre>
-
-<p>パターンマッチを使用して値をunpackする. Rustの<code>Option&lt;T&gt;.unwrap()</code>みたいなメソッド(そもそも, メソッドという概念)はあるのだろうか.</p>
-
+</code></pre><p>パターンマッチを使用して値をunpackする. Rustの<code>Option&lt;T&gt;.unwrap()</code>みたいなメソッド(そもそも, メソッドという概念)はあるのだろうか.</p>
 <h2 id="複合型">複合型</h2>
-
 <pre><code>// Tuple types are pairs, triples, etc. Tuples use commas.
 let twoTuple = 1,2
 let threeTuple = &quot;a&quot;,2,true
-</code></pre>
-
-<p>タプル(単純な形の値の集合)は<code>,</code>を用いて宣言する.</p>
-
-<h2 id="レコード型-https-docs-microsoft-com-ja-jp-dotnet-fsharp-language-reference-records"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/records">レコード型</a></h2>
-
+</code></pre><p>タプル(単純な形の値の集合)は<code>,</code>を用いて宣言する.</p>
+<h2 id="レコード型httpsdocsmicrosoftcomja-jpdotnetfsharplanguage-referencerecords"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/records">レコード型</a></h2>
 <pre><code>// Record types have named fields. Semicolons are separators.
 type Person = {First:string; Last:string}
 let person1 = {First=&quot;john&quot;; Last=&quot;Doe&quot;}
-</code></pre>
-
-<p>デフォルトは参照型. 詳しくは次のURLを参照すると良い. <a href="https://midoliy.com/content/fsharp/text/type-detail/0_record.html">https://midoliy.com/content/fsharp/text/type-detail/0_record.html</a></p>
-
-<h2 id="判別共用体-https-docs-microsoft-com-ja-jp-dotnet-fsharp-language-reference-discriminated-unions"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/discriminated-unions">判別共用体</a></h2>
-
+</code></pre><p>デフォルトは参照型. 詳しくは次のURLを参照すると良い. <a href="https://midoliy.com/content/fsharp/text/type-detail/0_record.html">https://midoliy.com/content/fsharp/text/type-detail/0_record.html</a></p>
+<h2 id="判別共用体httpsdocsmicrosoftcomja-jpdotnetfsharplanguage-referencediscriminated-unions"><a href="https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/discriminated-unions">判別共用体</a></h2>
 <pre><code>// Types can be combined recursively in complex ways.
 // E.g. here is a union type that contains a list of the same type:
 type Employee = 
@@ -246,30 +179,19 @@ type Employee =
   | Manager of Employee list
 let jdoe = {First=&quot;John&quot;;Last=&quot;Doe&quot;}
 let worker = Worker jdoe
-</code></pre>
-
-<p>複数の異なるオプションのうち、いずれかの値を格納できる型. 代数的データ型の一種?</p>
-
+</code></pre><p>複数の異なるオプションのうち、いずれかの値を格納できる型. 代数的データ型の一種?</p>
 <h2 id="出力">出力</h2>
-
 <pre><code>// The printf/printfn functions are similar to the
 // Console.Write/WriteLine functions in C#.
 printfn &quot;Printing an int %i, a float %f, a bool %b&quot; 1 2.0 true
 printfn &quot;A string %s, and something generic %A&quot; &quot;hello&quot; [1;2;3;4]
-</code></pre>
-
-<pre><code>// all complex types have pretty printing built in
+</code></pre><pre><code>// all complex types have pretty printing built in
 printfn &quot;twoTuple=%A,\nPerson=%A,\nTemp=%A,\nEmployee=%A&quot; 
          twoTuple person1 temp worker
-</code></pre>
-
-<p>複合型はいい感じの出力フォーマットを持っている.</p>
-
+</code></pre><p>複合型はいい感じの出力フォーマットを持っている.</p>
 <pre><code>// There are also sprintf/sprintfn functions for formatting data
 // into a string, similar to String.Format.
-</code></pre>
-
-<p>出力と同様の文字列が欲しい場合は<code>sprintf</code>, <code>sprintfn</code>を使う.</p>
+</code></pre><p>出力と同様の文字列が欲しい場合は<code>sprintf</code>, <code>sprintfn</code>を使う.</p>
 
   </section>
   <footer>
@@ -338,7 +260,7 @@ printfn &quot;twoTuple=%A,\nPerson=%A,\nTemp=%A,\nEmployee=%A&quot;
       
 
       &nbsp;&bull;&nbsp;
-      2020
+      2021
 
       
         &nbsp;&bull;&nbsp;

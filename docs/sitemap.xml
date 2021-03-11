@@ -1,6 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/coins/</loc>
+    <lastmod>2021-03-11T13:27:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
+    <lastmod>2021-03-11T13:27:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
+    <lastmod>2021-03-11T13:27:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
+    <lastmod>2021-03-11T13:27:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/jottoku/</loc>
+    <lastmod>2021-03-11T13:27:00+09:00</lastmod>
+  </url>
   
   <url>
     <loc>https://kaiseiyokoyama.github.io/blog/categories/</loc>
@@ -38,27 +63,12 @@
   </url>
   
   <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
-    <lastmod>2020-04-28T15:08:10+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kaiseiyokoyama.github.io/blog/tags/rust/</loc>
     <lastmod>2020-04-28T15:08:10+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://kaiseiyokoyama.github.io/blog/categories/rust/</loc>
-    <lastmod>2020-04-28T15:08:10+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
-    <lastmod>2020-04-28T15:08:10+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
     <lastmod>2020-04-28T15:08:10+09:00</lastmod>
   </url>
   

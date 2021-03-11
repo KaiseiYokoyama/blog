@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.58.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <meta name="generator" content="Hugo 0.72.0" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://kaiseiyokoyama.github.io/blog/css/style.css" />
   <script type="text/javascript" src="https://kaiseiyokoyama.github.io/blog/js/bundle.js"></script>
   
@@ -71,75 +71,56 @@
     </div>
   </header>
   <section id="js-article" class="p-article__body">
-    
-
-<p><img src="../images/joycon-rs.png" alt="joycon_rs_logo" /></p>
-
+    <p><img src="../images/joycon-rs.png" alt="joycon_rs_logo"></p>
 <h1 id="joycon-rs">Joycon-rs</h1>
-
-<p>ちょっとした興味もあって, <a href="https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering">dekuNukem氏らのレポート</a>を参考にRust言語からNintendo Switchのコントローラー <code>Joy-Con</code> を操作するライブラリ <a href="https://github.com/KaiseiYokoyama/joycon-rs"><code>Joycon-rs</code></a>を作成した.</p>
-
+<p>ちょっとした興味もあって, [dekuNukem氏らのレポート]を参考にRust言語からNintendo Switchのコントローラー <code>Joy-Con</code> を操作するライブラリ [<code>Joycon-rs</code>]を作成した.</p>
 <p>現行の最新版（v0.3.1）では</p>
-
 <ul>
 <li>ボタン / 6軸センサの状態取得</li>
 <li>側面のLED / HOMEボタンのライトの点灯</li>
 <li>ヴァイブレーションの制御</li>
 </ul>
-
-<p>ができる. 開発中のv0.4.0については<a href="https://github.com/KaiseiYokoyama/joycon-rs/projects/5">Github Projects</a>を見てほしい.</p>
-
-<p>対応環境はmacOS, Windows, Ubuntuの三つである.<br />
-このうち <em>macOS</em> ではライブラリの正しい動作を（なるべく）確認している.<br />
+<p>ができる. 開発中のv0.4.0については[Github Projects][v0.4.0]を見てほしい.</p>
+<p>対応環境はmacOS, Windows, Ubuntuの三つである.<br>
+このうち <em>macOS</em> ではライブラリの正しい動作を（なるべく）確認している.<br>
 Windows, Ubuntu（およびmacOS）ではGithub Actionsを使ってライブラリのビルド, ドキュメンテーションコメント内のExampleコードのビルド, <code>examples/</code>のビルドを確認している.</p>
-
-<p>さて, この<code>Joycon-rs</code>, 先をゆく人々からのアドバイスもあってドキュメントを英語<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>で書いてしまった.
+<p>さて, この<code>Joycon-rs</code>, 先をゆく人々からのアドバイスもあってドキュメントを英語<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>で書いてしまった.
 とはいえ母語でない言語を読み書きするのには気力を使うし, やる気は無制限に湧くものでもない.
-だいたいのことはドキュメンテーションコメントと<code>examples/</code>を見ればわかるように書いたが, それが面倒なときもある.<br />
+だいたいのことはドキュメンテーションコメントと<code>examples/</code>を見ればわかるように書いたが, それが面倒なときもある.<br>
 せめてものローカライズの一環として, v0.3.1時点での日本語での案内記事をここに残す. もしよければ, 参考にしてほしい.</p>
-
 <h1 id="事前準備">事前準備</h1>
-
 <h2 id="step-0-rust開発環境の整備">Step 0 Rust開発環境の整備</h2>
-
 <p>（お済みの方も多いとは思うが）まずはRustの開発環境を整えてほしい.
-詳しい手順はリンク先のRust公式サイトに譲る.<br />
+詳しい手順はリンク先のRust公式サイトに譲る.<br>
 <a href="https://www.rust-lang.org/ja/learn/get-started">https://www.rust-lang.org/ja/learn/get-started</a></p>
-
 <h2 id="step-1-joycon-rsの使用環境の整備">Step 1 Joycon-rsの使用環境の整備</h2>
-
-<p>macOS, Windows を使用する場合, この項目を気にする必要はない.<br />
+<p>macOS, Windows を使用する場合, この項目を気にする必要はない.<br>
 <em>Ubuntu</em> を使用する場合, 次のコマンドを実行する.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev</code></pre></div>
-<h2 id="step-2-joycon-rsをcargo-tomlに追加">Step 2 Joycon-rsをCargo.tomlに追加</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev
+</code></pre></div><h2 id="step-2-joycon-rsをcargotomlに追加">Step 2 Joycon-rsをCargo.tomlに追加</h2>
 <p>もはや表題の通りである.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml Cargo.toml" data-lang="toml Cargo.toml">[<span style="color:#a6e22e">dependencies</span>]
-<span style="color:#a6e22e">joycon</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">rs</span> = <span style="color:#e6db74">&#34;0.3.1&#34;</span></code></pre></div>
-<h2 id="step-3-joy-conをパソコンに接続">Step 3 Joy-Conをパソコンに接続</h2>
-
-<p><img src="../images/joycon_sync.png" alt="joycon_sync" /></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">dependencies</span>]
+<span style="color:#a6e22e">joycon</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">rs</span> = <span style="color:#e6db74">&#34;0.3.1&#34;</span>
+</code></pre></div><h2 id="step-3-joy-conをパソコンに接続">Step 3 Joy-Conをパソコンに接続</h2>
+<p><img src="../images/joycon_sync.png" alt="joycon_sync"></p>
 <p>JoyConのこの位置（画像参照）にSyncボタンがあるので, それを長押しする. Bluetoothの接続待機状態に移行すると側面のLEDが点滅し始めるので, パソコン側で接続設定を行う.</p>
-
 <h2 id="準備完了">準備完了</h2>
-
-<p>これで事前準備は完了である.<br />
+<p>これで事前準備は完了である.<br>
 次回は, 接続されているJoy-Conおよび新規に接続されたJoy-Conの検出について解説する.</p>
-
-<h4 id="next-joycon-rs-の使い方-joy-conの検出-001"><a href="../001">-&gt;Next: Joycon-rs の使い方 - Joy-Conの検出</a></h4>
-
-<p><code>Joycon-rs</code> v0.3.1の解説記事一覧はこちら.<br />
+<h4 id="-next-joycon-rs-の使い方---joy-conの検出001"><a href="../001">-&gt;Next: Joycon-rs の使い方 - Joy-Conの検出</a></h4>
+<p><code>Joycon-rs</code> v0.3.1の解説記事一覧はこちら.<br>
 <a href="https://kaiseiyokoyama.github.io/blog/tags/joycon-rs-v0.3.1/">tags/joycon-rs-v0.3.1</a></p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">EnglishというよりEngrish
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>EnglishというよりEngrish
+[dekuNukem氏らのレポート]: <a href="https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering">https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering</a>
+[v0.4.0]: <a href="https://github.com/KaiseiYokoyama/joycon-rs/projects/5">https://github.com/KaiseiYokoyama/joycon-rs/projects/5</a>
+[<code>Joycon-rs</code>]: <a href="https://github.com/KaiseiYokoyama/joycon-rs">https://github.com/KaiseiYokoyama/joycon-rs</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
   </section>
   <footer>
@@ -209,7 +190,7 @@ Windows, Ubuntu（およびmacOS）ではGithub Actionsを使ってライブラ�
       
 
       &nbsp;&bull;&nbsp;
-      2020
+      2021
 
       
         &nbsp;&bull;&nbsp;

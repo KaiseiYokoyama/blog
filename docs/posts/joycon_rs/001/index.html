@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.58.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <meta name="generator" content="Hugo 0.72.0" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://kaiseiyokoyama.github.io/blog/css/style.css" />
   <script type="text/javascript" src="https://kaiseiyokoyama.github.io/blog/js/bundle.js"></script>
   
@@ -71,24 +71,16 @@
     </div>
   </header>
   <section id="js-article" class="p-article__body">
-    
-
-<p><img src="../images/joycon-rs.png" alt="joycon_rs_logo" />
+    <p><img src="../images/joycon-rs.png" alt="joycon_rs_logo">
 （本記事はv0.3.1時点でのものである）</p>
-
-<h2 id="tl-dr">TL;DR</h2>
-
+<h2 id="tldr">TL;DR</h2>
 <p><a href="https://github.com/KaiseiYokoyama/joycon-rs/blob/master/examples/scan_for_joycons.rs">examples/scan_for_joycons.rs</a></p>
-
 <h1 id="joycon-rsを使ってjoycon-rsを検出する">Joycon-rsを使ってJoycon-rsを検出する</h1>
-
 <p><a href="https://github.com/KaiseiYokoyama/joycon-rs"><code>Joycon-rs</code></a>の機能を用いて,  <em>現在パソコンに接続しているJoy-Con</em> および <em>順次パソコンに新規接続してくるJoy-Con</em> を検出することができる.</p>
-
-<p>Joy-Conの管理において機能の主軸となるのは<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>である.<br />
+<p>Joy-Conの管理において機能の主軸となるのは<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>である.<br>
 <a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>は<code>new()</code>された際にパソコンに接続されているJoy-Conを内部のテーブルに記録しておく.
 そして指定時間ごとに<code>scan()</code>を実行し, 内部のテーブルを更新する.
 また<code>scan()</code>の際, 新たに見つかったJoy-Conを<a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>越しに通知してくれる.</p>
-
 <p>つべこべ言うのはここまでにして, まずはサンプルコードを示す.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> joycon_rs::prelude::<span style="color:#f92672">*</span>;
 <span style="color:#66d9ef">use</span> std::convert::TryInto;
@@ -118,9 +110,7 @@
 
     Ok(())
 }
-</code></pre></div>
-<p><code>let manager = JoyConManager::new()?;</code>で<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>のインスタンスを作っているのは言うまでもない.</p>
-
+</code></pre></div><p><code>let manager = JoyConManager::new()?;</code>で<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>のインスタンスを作っているのは言うまでもない.</p>
 <p>ここで生成されるインスタンスは<code>Arc&lt;Mutex&lt;T&gt;&gt;</code>で包まれているので,</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">let</span> (managed_devices, new_devices) <span style="color:#f92672">=</span> {
     <span style="color:#66d9ef">let</span> lock <span style="color:#f92672">=</span> manager.lock();
@@ -129,26 +119,19 @@
         Err(_) <span style="color:#f92672">=&gt;</span> unreachable<span style="color:#f92672">!</span>(),
     }
 };
-</code></pre></div>
-<p>という形でロックを取得してから, 必要な値である<code>managed_devices</code>, <code>new_devices</code>を取り出している.<br />
+</code></pre></div><p>という形でロックを取得してから, 必要な値である<code>managed_devices</code>, <code>new_devices</code>を取り出している.<br>
 <code>Arc</code>や<code>Mutex</code>をご存知でなくても, いまは気にせず先に進んで問題ない.</p>
-
 <p>さて, これで</p>
-
 <ul>
 <li>現在パソコンに接続されているJoy-Conのセット: <code>managed_devices</code></li>
 <li>順次パソコンに接続されるJoy-Conの通知チャンネル: <code>new_devices</code></li>
 </ul>
-
 <p>が手元に揃ったので, これらに対する処理を実装しよう.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">managed_devices.into_iter()
     .chain(new_devices)
-</code></pre></div>
-<p>このサンプルコードの肝といってもいいのがこの部分である. <code>managed_devices</code>を<code>.into_iter()</code>して生成されたイテレータに, <code>new_devices</code>を<code>.chain()</code>, つまり連結している. そうすることで, 現在把握しているJoy-Conと, これから接続しているJoy-Conに対する操作をまとめて記述できる.</p>
-
-<p>ちなみに, このイテレータは<code>loop{}</code>ブロックのように振る舞い, 基本的に止まることがない. <code>managed_devices</code>に束縛されていた<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConDevice.html"><code>JoyConDevice</code></a>全部の処理を終えたのちは, <code>new_devices</code>に束縛されていた<a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>に新たな<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConDevice.html"><code>JoyConDevice</code></a>がやってくるのを口を開けて待っている, そんな状態になる.<br />
+</code></pre></div><p>このサンプルコードの肝といってもいいのがこの部分である. <code>managed_devices</code>を<code>.into_iter()</code>して生成されたイテレータに, <code>new_devices</code>を<code>.chain()</code>, つまり連結している. そうすることで, 現在把握しているJoy-Conと, これから接続しているJoy-Conに対する操作をまとめて記述できる.</p>
+<p>ちなみに, このイテレータは<code>loop{}</code>ブロックのように振る舞い, 基本的に止まることがない. <code>managed_devices</code>に束縛されていた<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConDevice.html"><code>JoyConDevice</code></a>全部の処理を終えたのちは, <code>new_devices</code>に束縛されていた<a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>に新たな<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConDevice.html"><code>JoyConDevice</code></a>がやってくるのを口を開けて待っている, そんな状態になる.<br>
 もちろん, ループから抜ける場合もある. 例えば, これに続く<code>try_for_each()</code>の処理が失敗して, <code>Err</code>を返さねばならないときなどだ.</p>
-
 <p>下処理が済んだので, 実際の処理を実装しよう.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">.try_for_each::<span style="color:#f92672">&lt;</span>_, JoyConResult<span style="color:#f92672">&lt;</span>()<span style="color:#f92672">&gt;&gt;</span>(<span style="color:#f92672">|</span>d<span style="color:#f92672">|</span> {
     <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> Ok(device) <span style="color:#f92672">=</span> d.lock() {
@@ -157,45 +140,28 @@
     }
     Ok(())
 })<span style="color:#f92672">?</span>;
-</code></pre></div>
-<p>取得したJoy-Conに対してプロダクト名を尋ねている. 返答があればその名前を標準出力に流し, 返答がない, あるいは切断状態であれば<code>Err</code>を返す.</p>
-
+</code></pre></div><p>取得したJoy-Conに対してプロダクト名を尋ねている. 返答があればその名前を標準出力に流し, 返答がない, あるいは切断状態であれば<code>Err</code>を返す.</p>
 <h2 id="実行">実行</h2>
-
 <p>Joy-Con (L)を接続している場合, 次のような表示になる.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cargo run --example scan_for_joycons
    Compiling joycon-rs v0.3.1 <span style="color:#f92672">(</span>/hoge/github/joycon-rs<span style="color:#f92672">)</span>
-    Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in <span style="color:#ae81ff">3</span>.74s
+    Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 3.74s
      Running <span style="color:#e6db74">`</span>target/debug/examples/scan_for_joycons<span style="color:#e6db74">`</span>
-Some<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Joy-Con (L)&#34;</span><span style="color:#f92672">)</span></code></pre></div>
-<p>ここにJoy-Con &reg;を接続すると,</p>
-
+Some<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Joy-Con (L)&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p>ここにJoy-Con (R)を接続すると,</p>
 <pre><code>Some(&quot;Joy-Con (R)&quot;)
-</code></pre>
-
-<p>という新規の表示が出るはずだ. <a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>のデフォルトのスキャン間隔は1秒なので, 多少は待つかもしれない。<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html#method.with_interval"><code>JoyConManager::with_interval()</code></a>で, スキャン間隔の違う<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>を生成できる.</p>
-
-<h2 id="備考-余談">備考 / 余談</h2>
-
+</code></pre><p>という新規の表示が出るはずだ. <a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>のデフォルトのスキャン間隔は1秒なので, 多少は待つかもしれない。<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html#method.with_interval"><code>JoyConManager::with_interval()</code></a>で, スキャン間隔の違う<a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>を生成できる.</p>
+<h2 id="備考--余談">備考 / 余談</h2>
 <h3 id="joyconmanagerのインスタンス数の制限">JoyConManagerのインスタンス数の制限</h3>
-
 <p><a href="https://docs.rs/joycon-rs/0.3.1/joycon_rs/joycon/struct.JoyConManager.html"><code>JoyConManager</code></a>はフィールドに<a href="https://docs.rs/hidapi/1.2.1/hidapi/struct.HidApi.html"><code>hidapi::HidApi</code></a>を持っており, その影響でインスタンスを一つしか作れない（2つ目以降を作ると<code>JoyConManager::new()</code>が<code>Err</code>を返すはず）.</p>
-
 <p>このような場合にはシングルトンパターンを使うのが適切であろうから, 次回ぐらいのアップデートで修正したい. <code>lazy_static</code> の出番だろうか?</p>
-
-<h3 id="joyconmanager-new-devices-で生成されるreceiverについて">JoyConManager::new_devices()で生成されるReceiverについて</h3>
-
+<h3 id="joyconmanagernew_devicesで生成されるreceiverについて">JoyConManager::new_devices()で生成されるReceiverについて</h3>
 <p><a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>は<code>crossbeam_channel</code>のmpmc, Multi-Producer Multi-Consumer 型のchannelのものである. いくらでもCloneできるが, メッセージはどれかひとつの<a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>で<code>recv()</code>されれば消える。</p>
-
 <p>また, channelのキャパシティは0に設定されている。生成されているすべての<a href="https://docs.rs/crossbeam-channel/0.4.2/crossbeam_channel/struct.Receiver.html"><code>Receiver</code></a>が<code>recv()</code>の状態になければ、送信されたメッセージはどこかに消える。</p>
-
 <h1 id="次回">次回</h1>
-
 <p>次回は, 側面のLEDを制御する方法について解説する.</p>
-
-<h4 id="next-joycon-rs-の使い方-側面led-homeボタンのライト制御-002"><a href="../002">-&gt; Next: Joycon-rs の使い方 - 側面LED, HOMEボタンのライト制御</a></h4>
-
-<p><code>Joycon-rs</code> v0.3.1の解説記事一覧はこちら.<br />
+<h4 id="--next-joycon-rs-の使い方---側面led-homeボタンのライト制御002"><a href="../002">-&gt; Next: Joycon-rs の使い方 - 側面LED, HOMEボタンのライト制御</a></h4>
+<p><code>Joycon-rs</code> v0.3.1の解説記事一覧はこちら.<br>
 <a href="https://kaiseiyokoyama.github.io/blog/tags/joycon-rs-v0.3.1/">tags/joycon-rs-v0.3.1</a></p>
 
   </section>
@@ -266,7 +232,7 @@ Some<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Joy-Con
       
 
       &nbsp;&bull;&nbsp;
-      2020
+      2021
 
       
         &nbsp;&bull;&nbsp;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coins on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/coins/</link>
+    <description>Recent content in coins on モダンな言語をたのむ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; Kaisei Yokoyama</copyright>
+    <lastBuildDate>Thu, 11 Mar 2021 13:27:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/coins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>情報特別演習2回分の失敗が卒業研究に活かされた気がする</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/jottoku/</link>
+      <pubDate>Thu, 11 Mar 2021 13:27:00 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/jottoku/</guid>
+      <description>名誉や尊厳の問題もあって，失敗した話というのはなかなか出回らないものだが， 誰かの役に立つ話ではあると思うので，ここに供養する． 個人のあやふや</description>
+    </item>
+    
+  </channel>
+</rss>

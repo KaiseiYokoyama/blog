@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on モダンな言語をたのむ</title>
@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&amp;copy; Kaisei Yokoyama</copyright>
-    <lastBuildDate>Tue, 28 Apr 2020 15:08:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 11 Mar 2021 13:27:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>coins</title>
+      <link>https://kaiseiyokoyama.github.io/blog/tags/coins/</link>
+      <pubDate>Thu, 11 Mar 2021 13:27:00 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/tags/coins/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JoyCon</title>
