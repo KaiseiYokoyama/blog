@@ -45,7 +45,7 @@
       <pubDate>Tue, 28 Apr 2020 14:16:25 +0900</pubDate>
       
       <guid>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/000/</guid>
-      <description>Joycon-rs ちょっとした興味もあって, [dekuNukem氏らのレポート]を参考にRust言語からNintendo Switchのコントローラー Joy-Con を操作</description>
+      <description>Joycon-rs ちょっとした興味もあって, dekuNukem氏らのレポートを参考にRust言語からNintendo Switchのコントローラー Joy-Con を操作する</description>
     </item>
     
     <item>
@@ -55,15 +55,6 @@
       
       <guid>https://kaiseiyokoyama.github.io/blog/posts/swiftui/</guid>
       <description>題名をだいぶ省略しました。 struct HogeView: View { var body: some View { // ここ } } 上記のコードのコメントの位置でFor文じみた文法を使用する方法です。 TL;DR SwiftUIの</description>
-    </item>
-    
-    <item>
-      <title>60秒でわかるF#の文法</title>
-      <link>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</link>
-      <pubDate>Tue, 15 Oct 2019 19:47:25 +0900</pubDate>
-      
-      <guid>https://kaiseiyokoyama.github.io/blog/posts/fsharp_beginner/</guid>
-      <description>まず始めに, タイトル詐欺であることをここにお断りしておく. この記事はおそらく60秒では読めないだろう. 元ネタのF# syntax in 60 secondsに倣っ</description>
     </item>
     
   </channel>

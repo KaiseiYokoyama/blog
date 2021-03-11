@@ -36,7 +36,7 @@
       <pubDate>Tue, 28 Apr 2020 14:16:25 +0900</pubDate>
       
       <guid>https://kaiseiyokoyama.github.io/blog/posts/joycon_rs/000/</guid>
-      <description>Joycon-rs ちょっとした興味もあって, [dekuNukem氏らのレポート]を参考にRust言語からNintendo Switchのコントローラー Joy-Con を操作</description>
+      <description>Joycon-rs ちょっとした興味もあって, dekuNukem氏らのレポートを参考にRust言語からNintendo Switchのコントローラー Joy-Con を操作する</description>
     </item>
     
   </channel>
