@@ -1,7 +1,7 @@
 ---
 title: "60秒でわかるF#の文法"
 date: 2019-10-15T19:47:25+09:00
-draft: false
+draft: true
 tags: ["f_sharp", "dotnet"]
 ---
 
