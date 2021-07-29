@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rayon on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/rayon/</link>
+    <description>Recent content in rayon on モダンな言語をたのむ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; Kaisei Yokoyama</copyright>
+    <lastBuildDate>Thu, 29 Jul 2021 18:35:26 +0900</lastBuildDate>
+    
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/rayon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rust] rayonを使ったマルチスレッド版クイックソート・マージソート</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/rust/psort/</link>
+      <pubDate>Thu, 29 Jul 2021 18:35:26 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/rust/psort/</guid>
+      <description>ソートにもさまざまな種類がある。 その中でも、分割統治法に分類されるアルゴリズムを用いるソートはマルチスレッド処理と相性が良さそうに見える。 同</description>
+    </item>
+    
+  </channel>
+</rss>
