@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/intellij-idea/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/intellij/intellij_newproject_fail/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/kotlin/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
+    <lastmod>2021-09-23T14:53:03+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kaiseiyokoyama.github.io/blog/posts/rust/psort/</loc>
     <lastmod>2021-07-29T18:35:26+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://kaiseiyokoyama.github.io/blog/tags/algorithm/</loc>
-    <lastmod>2021-07-29T18:35:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/posts/</loc>
     <lastmod>2021-07-29T18:35:26+09:00</lastmod>
   </url>
   
@@ -29,16 +54,6 @@
   
   <url>
     <loc>https://kaiseiyokoyama.github.io/blog/tags/sort/</loc>
-    <lastmod>2021-07-29T18:35:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/tags/</loc>
-    <lastmod>2021-07-29T18:35:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kaiseiyokoyama.github.io/blog/</loc>
     <lastmod>2021-07-29T18:35:26+09:00</lastmod>
   </url>
   

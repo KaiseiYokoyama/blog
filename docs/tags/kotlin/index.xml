@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kotlin on モダンな言語をたのむ</title>
+    <link>https://kaiseiyokoyama.github.io/blog/tags/kotlin/</link>
+    <description>Recent content in Kotlin on モダンな言語をたのむ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; Kaisei Yokoyama</copyright>
+    <lastBuildDate>Thu, 23 Sep 2021 14:53:03 +0900</lastBuildDate>
+    
+	<atom:link href="https://kaiseiyokoyama.github.io/blog/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IntelliJ IDEAでNew Projectできない</title>
+      <link>https://kaiseiyokoyama.github.io/blog/posts/intellij/intellij_newproject_fail/</link>
+      <pubDate>Thu, 23 Sep 2021 14:53:03 +0900</pubDate>
+      
+      <guid>https://kaiseiyokoyama.github.io/blog/posts/intellij/intellij_newproject_fail/</guid>
+      <description>直し方 IntelliJ IDEAのKotlinプラグインをアンインストールして、IntelliJ IDEAを再起動する。 As a workaround, open &amp;ldquo;File | Settings | Plugins&amp;rdquo;, uninstall the Kotlin plugin and restart. It will downgrade to</description>
+    </item>
+    
+  </channel>
+</rss>
